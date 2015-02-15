@@ -1,15 +1,21 @@
 require 'socket'
- 
-host = 'stallman.org'
-port = 80
-path = "/index.html"
+def web
+	puts "Website? (EG: google.com)"
+	host = gets.chomp
+	port = 80
+	puts "File? (EG: /index.html)"
+	path = gets.chomp
 
-request = "GET #{path} HTTP/1.0\r\n\r\n"
+	request = "GET #{path} HTTP/1.0\r\n\r\n"
 
-socket = TCPSocket.open(host,port)  
-socket.print(request)               
-response = socket.read
+	socket = TCPSocket.open(host,port)  
+	socket.print(request)               
+	response = socket.read
 
-headers,body = response.split("\r\n\r\n", 2) 
-print body
-gets.chomp
+	headers,body = response.split("\r\n\r\n", 2) 
+	print body
+	puts " "
+	web
+end
+
+web
