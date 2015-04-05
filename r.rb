@@ -13,8 +13,18 @@ def web
 	response = socket.read
 	
 	headers,body = response.split("\r\n\r\n", 2) 
+    body.gsub! '<', ''
+    body.gsub! '>', ''
+    body.gsub! '<p>', ''
+    body.gsub! '<h1>', ''
+    body.gsub! '<html>', ''
+    body.gsub! '<b>', ''
+    body.gsub! '</p>', ''
+    body.gsub! '</h1>', ''
+    body.gsub! '</html>', ''
+    body.gsub! '</b>', ''
 	print body
-	puts " "
+	puts ""
 	web
 end
 
