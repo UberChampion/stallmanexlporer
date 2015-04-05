@@ -1,2 +1,7 @@
-# Stallman-Explorer
-A web browser for people like Richard Matthew Stallman, who prefer rendering the webpage in their head.
+# r
+A text based web browser.
+
+#Web page rendering
+a standard web page in r looks a long the lines of this;
+```pTest/p
+pthis is a website/p```
